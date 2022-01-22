@@ -1,0 +1,29 @@
+server.port: 9100
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:9102/eureka
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+#            routes:
+#                - id: actor
+#                  uri: http://localhost:9098
+#                  predicates:
+#                      - Path=/actor
+
+jwt-provider:
+  secret-key: sRgiGbj5h47UtVJ3nrdQ5ElhI/TqFSa85bXU13++YLiU/yL1BEGXbTsoKGn4Q+siooPEU7MoQGWWsWC6H5jVPJWazsoXCzXgfwSoUYZLSYjgWSg8QI+nMdqbNzP6Y7ty4/BuQGhE6xrtV8LdIRZ9iXRqvkc2mz5oeR933sUXlL/Cn4S+NLGmao9RHJAbV2YMlBg08qGOFV450IwZT4PYtWQvvBk/qe/X1sFMFpXZYTg+ZzpxQyDLesebkJsF+Zv9p0e/0Aqts3vpSdXNw7Frm64sMEnlRMI9mj+M60G9pihywkr2d8EdyaNxkiYQtAFFVEAbJzwIcB7Z780MQWQWrQ==
+  validity-time: 31556952000 # 1 Year
