@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: tracing-service
+eureka:
+  client:
+    register-with-eureka: 'true'
+    service-url:
+      defaultZone: http://localhost:9102/eureka/
+    fetch-registry: 'true'
+  instance:
+    prefer-ip-address: 'true'
+server:
+  port: '9090'
